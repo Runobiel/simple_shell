@@ -99,8 +99,8 @@ line_list *add_line_node_end(line_list **head, char *line);
 void free_line_list(line_list **head);
 
 /* aux_lists2.c */
-_var *add_rvar_node(r_var **head, int lvar, char *var, int lval);
-d free_rvar_list(r_var **head);
+r_var *add_rvar_node(r_var **head, int lvar, char *var, int lval);
+void free_rvar_list(r_var **head);
 
 /* aux_str functions */
 char *_strcat(char *dest, const char *src);
@@ -178,20 +178,35 @@ int _unsetenv(data_shell *datash);
 /* cd.c */
 
 void cd_dot(data_shell *datash);
+
 void cd_to(data_shell *datash);
+
 void cd_previous(data_shell *datash);
+
 void cd_to_home(data_shell *datash);
 
+
+
 /* cd_shell.c */
+
 int cd_shell(data_shell *datash);
 
+
+
 /* get_builtin */
+
 int (*get_builtin(char *cmd))(data_shell *datash);
 
+
+
 /* _exit.c */
+
 int exit_shell(data_shell *datash);
 
+
+
 /* aux_stdlib.c */
+
 int get_len(int n);
 
 char *aux_itoa(int n);
@@ -200,7 +215,7 @@ int _atoi(char *s);
 
 
 
-/* aux1_error.c */
+/* aux_error1.c */
 
 char *strcat_cd(data_shell *, char *, char *, char *);
 
@@ -212,7 +227,7 @@ char *error_exit_shell(data_shell *datash);
 
 
 
-/* aux2_error.c */
+/* aux_error2.c */
 
 char *error_get_alias(char **args);
 
@@ -240,7 +255,7 @@ void get_sigint(int sig);
 
 
 
-/* aux_solved.c */
+/* aux_help.c */
 
 void aux_help_env(void);
 
@@ -254,7 +269,7 @@ void aux_help_exit(void);
 
 
 
-/* aux_solved2.c */
+/* aux_help2.c */
 
 void aux_help(void);
 
